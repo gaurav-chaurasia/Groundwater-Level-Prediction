@@ -47,3 +47,7 @@ model = LSTM(input_size=3, hidden_size=5, num_layers=1, class_size=1, dropout=0.
 PATH = "streamflow_model.pth"
 model.load_state_dict(torch.load(PATH))
 model.eval()
+
+
+def get_prediction():
+    pass
