@@ -23,9 +23,9 @@ class LSTM(nn.Module):
         self.rnn_type = rnn_type
         self.rnn = nn.LSTM(
             input_size=self.input_size,
-            hidden_size=self.hidden_size,     # rnn hidden unit
-            num_layers=self.num_layers,       # number of rnn layer
-            batch_first=True,   # input & output will has batch size as 1s dimension. e.g. (batch, time_step, input_size)
+            hidden_size=self.hidden_size,
+            num_layers=self.num_layers,
+            batch_first=True,
         )
 
         self.dropout = nn.Dropout(dropout)
@@ -36,8 +36,8 @@ class LSTM(nn.Module):
         c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size)
         r_out, _ = self.rnn(x, (h0, c0))
 
-        outs = []    # save all predictions
-        for time_step in range(r_out.size(1)):    # calculate output for each time step
+        outs = []
+        for time_step in range(r_out.size(1)):
             outs.append(self.out(self.dropout((r_out[:, time_step, :]))))
         return torch.stack(outs, dim=1)
 
