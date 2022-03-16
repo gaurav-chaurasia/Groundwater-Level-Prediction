@@ -49,5 +49,31 @@ model.load_state_dict(torch.load(PATH))
 model.eval()
 
 
-def get_prediction():
-    pass
+def get_prediction(p, tmax, tmin):
+
+    # download dataset
+    # main utils
+    ss_X = StandardScaler()
+    ss_y = StandardScaler()
+
+    url='https://raw.githubusercontent.com/sachin-saroha/Data/main/APHRODITE_deep_learning%20(1).csv'
+    data = pd.read_csv(url, index_col='Date')
+    # data.head()
+
+    input_data = [['2014-12-30', float(p), float(tmin), float(tmax)]]
+    input_data = pd.DataFrame(input_data, columns = ['Date', 'p', 'tmin', 'tmax'])
+    input_data = input_data.set_index('Date')
+
+    # print(input_data)
+    # print(data)
+    input_data = input_data.values
+    print(input_data)
+
+
+    Inputs = data.drop('Q', axis=1)
+    Inputs = Inputs.values
+    print(Inputs)
+
+    X = np.concatenate([Inputs, input_data], axis=0)
+    
+    return 9
