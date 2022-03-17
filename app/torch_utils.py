@@ -60,20 +60,72 @@ def get_prediction(p, tmax, tmin):
     data = pd.read_csv(url, index_col='Date')
     # data.head()
 
-    input_data = [['2014-12-30', float(p), float(tmin), float(tmax)]]
-    input_data = pd.DataFrame(input_data, columns = ['Date', 'p', 'tmin', 'tmax'])
+    input_data = [['2014-12-30', float(p), float(tmax), float(tmin)]]
+    input_data = pd.DataFrame(input_data, columns = ['Date', 'p', 'tmax', 'tmin'])
     input_data = input_data.set_index('Date')
 
     # print(input_data)
     # print(data)
     input_data = input_data.values
-    print(input_data)
+    # print(input_data)
 
 
     Inputs = data.drop('Q', axis=1)
+    Outputs = data['Q']
     Inputs = Inputs.values
-    print(Inputs)
 
-    X = np.concatenate([Inputs, input_data], axis=0)
-    
-    return 9
+    Outputs = Outputs.values.reshape(-1, 1)
+    # print(Inputs.shape)
+
+    Inputs = np.concatenate([Inputs, input_data], axis=0)
+
+    # defining some variables
+    training_percentage = 0.7
+    testing_percentage = 1 - training_percentage
+
+    # this shape of numpy array give the dimension of the matrix and zero'th index element gives number of element in matrix
+    data_size = Inputs.shape[0] | Outputs.shape[0]
+
+    count_for_training = round(training_percentage * data_size)
+    count_for_testing = data_size - count_for_training
+
+    X_train = Inputs[0:count_for_training]
+    y_train = Outputs[0:count_for_training]
+
+
+    X_test = Inputs[count_for_training:]
+    y_test = Outputs[count_for_training:]
+
+    X = np.concatenate([X_train, X_test], axis=0)
+
+
+    # Standardization
+    X = ss_X.fit_transform(X)
+
+    # Training set of data
+    X_train_standardized = X[0:count_for_training]
+    X_train_standardized = np.expand_dims(X_train_standardized, axis=0)
+    # print(X_train_standardized, "\n")
+
+
+    y_train_standardized = ss_y.fit_transform(y_train)
+    y_train_standardized = np.expand_dims(y_train_standardized, axis=0)
+    # print(y_train_standardized, "\n")
+
+
+    X_test_standardized  = X
+    X_test_standardized = np.expand_dims(X_test_standardized, axis=0)
+
+    # Transfer to Pytorch Variable
+    X_train_standardized = Variable(torch.from_numpy(X_train_standardized).float())
+    y_train_standardized = Variable(torch.from_numpy(y_train_standardized).float())
+    X_test_standardized = Variable(torch.from_numpy(X_test_standardized).float())
+
+    model.eval()
+
+    # print("sfsf",X_test_standardized.shape)
+    # this y_prediction is prediction made by model on X_test_standardized data
+    y_pred_total = model(X_test_standardized).detach().numpy()
+    y_pred_total = ss_y.inverse_transform(y_pred_total[0, :])
+
+    return y_pred_total[-1][0]

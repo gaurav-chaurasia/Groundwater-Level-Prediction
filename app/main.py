@@ -18,5 +18,5 @@ def predict():
     # convert text to tensor
     # prediction
     # return the json data
-    return jsonify({'result': True})
+    return jsonify({'result': True, 'prediction': prediction})
 
