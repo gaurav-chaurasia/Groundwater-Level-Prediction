@@ -18,8 +18,8 @@ body {
 }
 
 .container {
-  width: 400px;
-  max-width: 400px;
+  width: 500px;
+  max-width: 500px !important;
   margin: 1rem;
   padding: 2rem;
   border-radius: var(--border-radius);
