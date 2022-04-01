@@ -44,7 +44,7 @@ class LSTM(nn.Module):
 
 model = LSTM(input_size=3, hidden_size=5, num_layers=1, class_size=1, dropout=0.5, rnn_type='lstm')
 
-PATH = "streamflow_model.pth"
+PATH = "app/streamflow_model.pth"
 model.load_state_dict(torch.load(PATH))
 model.eval()
 

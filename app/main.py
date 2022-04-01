@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from torch_utils import get_prediction
+from app.torch_utils import get_prediction
 
 app = Flask(__name__)
 
