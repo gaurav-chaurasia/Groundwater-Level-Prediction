@@ -1,7 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+certifi==2021.10.8
+charset-normalizer==2.0.12
 click==8.0.4
 cycler==0.11.0
 Flask==2.0.3
 fonttools==4.30.0
+idna==3.3
 itsdangerous==2.1.1
 Jinja2==3.0.3
 joblib==1.1.0
@@ -15,6 +19,7 @@ Pillow==9.0.1
 pyparsing==3.0.7
 python-dateutil==2.8.2
 pytz==2021.3
+requests==2.27.1
 scikit-learn==1.0.2
 scipy==1.8.0
 six==1.16.0
@@ -23,4 +28,5 @@ torch==1.10.2+cpu
 torchaudio==0.10.2+cpu
 torchvision==0.11.3+cpu
 typing-extensions==4.1.1
+urllib3==1.26.9
 Werkzeug==2.0.3
