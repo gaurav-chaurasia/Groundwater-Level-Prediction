@@ -1,10 +1,10 @@
---extra-index-url https://download.pytorch.org/whl/cpu
 certifi==2021.10.8
 charset-normalizer==2.0.12
 click==8.0.4
 cycler==0.11.0
 Flask==2.0.3
 fonttools==4.30.0
+gunicorn==20.1.0
 idna==3.3
 itsdangerous==2.1.1
 Jinja2==3.0.3
