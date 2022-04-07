@@ -46,11 +46,11 @@ class LSTM(nn.Module):
 streamflow = LSTM(input_size=3, hidden_size=5, num_layers=1, class_size=1, dropout=0.5, rnn_type='lstm')
 groundwater_level = LSTM(input_size=5, hidden_size=40, num_layers=1, class_size=1, dropout=0.5, rnn_type='lstm')
 
-PATH = "streamflow_model.pth"
+PATH = "app/streamflow_model.pth"
 streamflow.load_state_dict(torch.load(PATH))
 streamflow.eval()
 
-PATH1 = "groundwater_level.pth"
+PATH1 = "app/groundwater_level.pth"
 groundwater_level.load_state_dict(torch.load(PATH1))
 groundwater_level.eval()
 
