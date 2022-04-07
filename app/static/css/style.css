@@ -6,7 +6,7 @@
 }
 
 body {
-  --bg-color: #ede9f8;
+  /* --bg-color: #ede9f8; */
   --color-primary: #2d3436;
   --color-secondary: #252c6a;
   --border-radius: 4px;
@@ -24,6 +24,8 @@ body {
   padding: 2rem;
   border-radius: var(--border-radius);
   background: white;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.07), 
+  0 32px 64px rgba(199, 199, 199, 0.07);
 }
 
 .form--hidden {

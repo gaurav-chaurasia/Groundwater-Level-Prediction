@@ -8,6 +8,11 @@
     <!-- <link rel="stylesheet" href="static/css/style.css"> -->
   
     <title>Model Explanation</title>
+    <style>
+        p {
+            line-height: 35px;
+        }
+    </style>
 </head>
 <body>
     <div class="container" style="width: 800px !important; max-width: 800px !important; margin: 50px auto; font-size: 1.2rem;">
@@ -20,11 +25,12 @@
         <div class="my-3">
             <script src="https://gist.github.com/gaurav-chaurasia/086f1dffa9bc3a4b47096ce747a8283a.js"></script>
         </div>
-
-        In this study, we will be using deep learning algorithms in order to predict the water table depth using hydrological parameters like water diversion, precipitation, temperature, rainfall, etc and automating the process of finding the water table depth by providing the interface through which prediction can be made also the ability to 
-        Figure 3.1: flowchart of designing the model and selecting the best model based on the accuracy 
-        learn and improve the model by adding the functionality of updating or adding training data from the interface. In this study, we will be using the LSTM (long-short term memory) algorithm which is a special kind of RNN (recurrent neural network). An RNN model has internal self-looped cells, allowing the RNN to “remember” time-series information and making it adept at performing time-series tasks and will be using google colab for model implementation, model training, and finally model accuracy on RMSE, confusion matrix then finally deploying the model and linking it with the same sort of interface for easy access to everyone for the prediction and training the model over and over again for improving.
-        After the training of the model with specified RNN algorithms with proper validation and checking the accuracy we will create a REST API which will serve the deployed trained model and act as bridge between client and prediction service which provides the prediction to the end user also a ML pipeline for continuous training/development and deployment of the model. The flow of contacting clients to prediction service and getting required prediction and other information through rest api is shown in the diagram (Fig 3.2) below.
+        <p>
+            In this study, we will be using deep learning algorithms in order to predict the water table depth using hydrological parameters like water diversion, precipitation, temperature, rainfall, etc and automating the process of finding the water table depth by providing the interface through which prediction can be made also the ability to 
+            Figure 3.1: flowchart of designing the model and selecting the best model based on the accuracy 
+            learn and improve the model by adding the functionality of updating or adding training data from the interface. In this study, we will be using the LSTM (long-short term memory) algorithm which is a special kind of RNN (recurrent neural network). An RNN model has internal self-looped cells, allowing the RNN to “remember” time-series information and making it adept at performing time-series tasks and will be using google colab for model implementation, model training, and finally model accuracy on RMSE, confusion matrix then finally deploying the model and linking it with the same sort of interface for easy access to everyone for the prediction and training the model over and over again for improving.
+            After the training of the model with specified RNN algorithms with proper validation and checking the accuracy we will create a REST API which will serve the deployed trained model and act as bridge between client and prediction service which provides the prediction to the end user also a ML pipeline for continuous training/development and deployment of the model. The flow of contacting clients to prediction service and getting required prediction and other information through rest api is shown in the diagram (Fig 3.2) below.
+        </p>
 
     </div>
 
