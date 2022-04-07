@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from torch_utils import get_streamflow_prediction, get_groundwater_prediction
+from app.torch_utils import get_streamflow_prediction, get_groundwater_prediction
 
 app = Flask(__name__)
 
