@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="static/css/style.css"> -->
-  
+
     <title>Model Explanation</title>
     <style>
         p {
@@ -14,29 +16,50 @@
         }
     </style>
 </head>
+
 <body>
-    <div class="container" style="width: 800px !important; max-width: 800px !important; margin: 50px auto; font-size: 1.2rem;">
-        <h1>Model Description</h1> 
+    <div class="container"
+        style="width: 800px !important; max-width: 800px !important; margin: 50px auto; font-size: 1.2rem;">
+        <h1>Model Description</h1>
         <div>
             <a class="mx-2" href="/"> home</a>
-            <a class="mx-2" target="_blank" href="https://github.com/gaurav-chaurasia/Groundwater-Level-Prediction"> codebase</a>
-            <a class="mx-2" target="_blank" href="https://gist.github.com/gaurav-chaurasia/086f1dffa9bc3a4b47096ce747a8283a"> model-code</a>
+            <a class="mx-2" target="_blank" href="https://github.com/gaurav-chaurasia/Groundwater-Level-Prediction">
+                codebase</a>
+            <a class="mx-2" target="_blank"
+                href="https://gist.github.com/gaurav-chaurasia/086f1dffa9bc3a4b47096ce747a8283a"> model-code</a>
         </div>
         <div class="my-3">
             <script src="https://gist.github.com/gaurav-chaurasia/086f1dffa9bc3a4b47096ce747a8283a.js"></script>
         </div>
         <p>
-            In this study, we will be using deep learning algorithms in order to predict the water table depth using hydrological parameters like water diversion, precipitation, temperature, rainfall, etc and automating the process of finding the water table depth by providing the interface through which prediction can be made also the ability to 
-            Figure 3.1: flowchart of designing the model and selecting the best model based on the accuracy 
-            learn and improve the model by adding the functionality of updating or adding training data from the interface. In this study, we will be using the LSTM (long-short term memory) algorithm which is a special kind of RNN (recurrent neural network). An RNN model has internal self-looped cells, allowing the RNN to “remember” time-series information and making it adept at performing time-series tasks and will be using google colab for model implementation, model training, and finally model accuracy on RMSE, confusion matrix then finally deploying the model and linking it with the same sort of interface for easy access to everyone for the prediction and training the model over and over again for improving.
-            After the training of the model with specified RNN algorithms with proper validation and checking the accuracy we will create a REST API which will serve the deployed trained model and act as bridge between client and prediction service which provides the prediction to the end user also a ML pipeline for continuous training/development and deployment of the model. The flow of contacting clients to prediction service and getting required prediction and other information through rest api is shown in the diagram (Fig 3.2) below.
+            In this study, we will be using deep learning algorithms in order to predict the water table depth using
+            hydrological parameters like water diversion, precipitation, temperature, rainfall, etc and automating the
+            process of finding the water table depth by providing the interface through which prediction can be made
+            also the ability to
+            Figure 3.1: flowchart of designing the model and selecting the best model based on the accuracy
+            learn and improve the model by adding the functionality of updating or adding training data from the
+            interface. In this study, we will be using the LSTM (long-short term memory) algorithm which is a special
+            kind of RNN (recurrent neural network). An RNN model has internal self-looped cells, allowing the RNN to
+            “remember” time-series information and making it adept at performing time-series tasks and will be using
+            google colab for model implementation, model training, and finally model accuracy on RMSE, confusion matrix
+            then finally deploying the model and linking it with the same sort of interface for easy access to everyone
+            for the prediction and training the model over and over again for improving.
+            After the training of the model with specified RNN algorithms with proper validation and checking the
+            accuracy we will create a REST API which will serve the deployed trained model and act as bridge between
+            client and prediction service which provides the prediction to the end user also a ML pipeline for
+            continuous training/development and deployment of the model. The flow of contacting clients to prediction
+            service and getting required prediction and other information through rest api is shown in the diagram (Fig
+            3.2) below.
         </p>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js'></script>
-    <script  src="static/js/script.js"></script>
+    <script src="static/js/script.js"></script>
 </body>
+
 </html>
