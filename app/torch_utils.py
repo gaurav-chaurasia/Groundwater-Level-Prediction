@@ -74,7 +74,8 @@ def get_groundwater_prediction(m, i, r, t, e):
     input_data = pd.DataFrame(input_data, columns = ['Month', 'Irrigation', 'Rainfall', 'Tem', 'Evaporation'])
     # input_data = input_data.set_index('Date')
 
-    # print(input_data)
+    print("#User Input Received")
+    print(input_data)
     # print(data)
     input_data = input_data.values
     # print(input_data)
@@ -107,7 +108,7 @@ def get_groundwater_prediction(m, i, r, t, e):
     # Training set of data
     X_train_standardized = X[0:count_for_training]
     X_train_standardized = np.expand_dims(X_train_standardized, axis=0)
-    # print(X_train_standardized, "\n")
+    print(X_train_standardized, "\n")
 
 
     y_train_standardized = ss_y.fit_transform(y_train)
