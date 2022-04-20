@@ -130,7 +130,7 @@ def get_groundwater_prediction(m, i, r, t, e):
     y_pred_total = groundwater_level(X_test_standardized).detach().numpy()
     y_pred_total = ss_y.inverse_transform(y_pred_total[0, :])
 
-    print(y_pred_total)
-    print(Outputs)
+    print(y_pred_total.shape[0])
+    print(Outputs.shape[0])
     return y_pred_total[-1][0]
 

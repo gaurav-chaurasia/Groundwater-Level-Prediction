@@ -13,21 +13,31 @@
 
 <body>
   <!-- partial:index.partial.html -->
-  <div class="container">
-    <div class="form" id="login">
-      <h1 class="form__title">Estimated Groundwater Level</h1>
-      <div class="form__input-group">
-        {{ prediction }}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container">
+        <div class="form" id="login">
+          <h1 class="form__title">Estimated Groundwater Level</h1>
+          <div class="form__input-group">
+            ={{ prediction }}
+          </div>
+          <div class="form__input-group">
+            <div class="padding"></div>
+            <a href="/"><button type="submit" class="form__button" id="get_estimate">Return</button></a>
+          </div>
+        </div>
+        <a href="/model">Model Details</a>
+        <a href="/" class="mx-3">Home</a>
       </div>
-      <div class="form__input-group">
-        <div class="padding"></div>
-        <a href="/"><button type="submit" class="form__button" id="get_estimate">Return</button></a>
+      <div class="container" style="text-align: center;">
+        <sub>Time Series Prediction of Groundwater Level</sub>
+        <img src="../static/imgs/groundwater_level.png" width="100%" alt="" srcset="">
       </div>
     </div>
-    <a href="/model">Model Details</a>
   </div>
-  <div class="container">
-
+  <div class="col-md-6">
+    <img src="../static/imgs/streamflow_all.png" width="100%" alt="" srcset="">
+    <!-- <img src="../static/imgs/streamflow_test.png" width="100%" alt="" srcset=""> -->
   </div>
   <!-- partial -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
