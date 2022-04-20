@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from app.torch_utils import get_streamflow_prediction, get_groundwater_prediction
+from torch_utils import get_groundwater_prediction
 
 app = Flask(__name__)
 
@@ -20,7 +20,8 @@ def predict():
     Rainfall = request.form['Rainfall']
     Tem = request.form['Tem']
     Evaporation = request.form['Evaporation']
-    
+    Collection_Date = request.form['date']
+    print(Collection_Date)
     prediction = get_groundwater_prediction(m=Month, i=Irrigation, r=Rainfall, t=Tem, e=Evaporation)
 
 
